@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/lodgify-mockup/static/css/main.073c9b0a.css",
+    "main.js": "/lodgify-mockup/static/js/main.b92a16a9.js",
+    "static/js/787.612659ff.chunk.js": "/lodgify-mockup/static/js/787.612659ff.chunk.js",
+    "index.html": "/lodgify-mockup/index.html",
+    "main.073c9b0a.css.map": "/lodgify-mockup/static/css/main.073c9b0a.css.map",
+    "main.b92a16a9.js.map": "/lodgify-mockup/static/js/main.b92a16a9.js.map",
+    "787.612659ff.chunk.js.map": "/lodgify-mockup/static/js/787.612659ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b92a16a9.js"
+  ]
+}
