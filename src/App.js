@@ -6,7 +6,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<ReservationsPage />} exact />
+        <Route path='/' element={<ReservationsPage />} />
+        <Route path='lodgify-mockup' element={<ReservationsPage />} />
       </Routes>
     </BrowserRouter>
 
