@@ -1,6 +1,7 @@
-## Link
 
-Visit the website at https://tix123.github.io/lodgify-mockup/
+## View this project online
+This project has been deployed on the Github Pages. Visit https://tix123.github.io/lodgify-mockup/
+
 
 ## Screenshot
 
