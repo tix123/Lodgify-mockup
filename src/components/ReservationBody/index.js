@@ -34,7 +34,9 @@ import {
 } from './ReservationBodyElements';
 
 const ReservationBody = () => {
-    const [bookings, setBookings] = useState([
+    const [bookings, setBookings] = useState([])
+
+    const [originalBookings, setOriginalBookings] = useState([
         {
             "id": "1",
             "name": "Morris Chang",
@@ -144,6 +146,10 @@ const ReservationBody = () => {
 
     const [id, setId] = useState();
 
+    useEffect(() => {
+        setBookings(originalBookings)
+    }, [originalBookings])
+
     // Get data from local json file
     // useEffect(() => {
     //     fetch('./JSON/bookings.json')
@@ -227,12 +233,15 @@ const ReservationBody = () => {
         }
     };
 
-    const [originalBookings, setOriginalBookings] = useState(null)
+
 
     const handleSearch = (value) => {
-        setOriginalBookings(bookings);
-        let searchResult = bookings.filter(booking => booking.name.toLowerCase().includes(value.toLowerCase()));
-        setBookings(searchResult);
+        if (value.length > 0) {
+            let searchResult = originalBookings.filter(booking => booking.name.toLowerCase().includes(value.toLowerCase()));
+            setBookings(searchResult);
+        } else if (value.length === 0) {
+            setBookings(originalBookings);
+        }
     }
 
     return (
