@@ -36,111 +36,111 @@ import {
 const ReservationBody = () => {
     const [bookings, setBookings] = useState([
         {
-          "id": "1",
-          "name": "Bill Gates",
-          "update": "10 Jan 2021",
-          "room": "King Studio Apartment",
-          "arrival": "18 Jan 2021",
-          "departure": "22 Jan 2021",
-          "night": 3,
-          "people": 2,
-          "email": "bill.gates@gmail.com",
-          "phone": "+14449991234",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.1 / CA"
+            "id": "1",
+            "name": "Morris Chang",
+            "update": "10 Jan 2021",
+            "room": "King Studio Apartment",
+            "arrival": "18 Jan 2021",
+            "departure": "22 Jan 2021",
+            "night": 3,
+            "people": 2,
+            "email": "Morris.Chang@gmail.com",
+            "phone": "+14449991234",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.1 / CA"
         },
         {
-          "id": "2",
-          "name": "Mark Zuckerberg",
-          "update": "10 Dec 2020",
-          "room": "King Studio Apartment",
-          "arrival": "15 Dec 2020",
-          "departure": "21 Dec 2020",
-          "night": 5,
-          "people": 3,
-          "email": "mark.zuckerberg@gmail.com",
-          "phone": "+14449994321",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.33 / CA"
+            "id": "2",
+            "name": "Lisa Su",
+            "update": "10 Dec 2020",
+            "room": "King Studio Apartment",
+            "arrival": "15 Dec 2020",
+            "departure": "21 Dec 2020",
+            "night": 5,
+            "people": 3,
+            "email": "Lisa.Su@gmail.com",
+            "phone": "+14449994321",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.33 / CA"
         },
         {
-          "id": "3",
-          "name": "Jeff Bezos",
-          "update": "2 Feb 2021",
-          "room": "Queen Apartments",
-          "arrival": "5 Feb 2021",
-          "departure": "6 Feb 2021",
-          "night": 1,
-          "people": 2,
-          "email": "jeff.bezos@gmail.com",
-          "phone": "+14449991234",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.1 / CA"
+            "id": "3",
+            "name": "Jensen Huang",
+            "update": "2 Feb 2021",
+            "room": "Queen Apartments",
+            "arrival": "5 Feb 2021",
+            "departure": "6 Feb 2021",
+            "night": 1,
+            "people": 2,
+            "email": "Jensen.Huang@gmail.com",
+            "phone": "+14449991234",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.1 / CA"
         },
         {
-          "id": "4",
-          "name": "Elon Musk",
-          "update": "15 Mar 2019",
-          "room": "Queen Apartments",
-          "arrival": "3 Apr 2020",
-          "departure": "12 Apr 2020",
-          "night": 8,
-          "people": 2,
-          "email": "elon.musk@gmail.com",
-          "phone": "+14449994321",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.33 / CA"
+            "id": "4",
+            "name": "Jerry Yang",
+            "update": "15 Mar 2019",
+            "room": "Queen Apartments",
+            "arrival": "3 Apr 2020",
+            "departure": "12 Apr 2020",
+            "night": 8,
+            "people": 2,
+            "email": "Jerry.Yang@gmail.com",
+            "phone": "+14449994321",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.33 / CA"
         },
         {
-          "id": "5",
-          "name": "Sean Chen",
-          "update": "21 May 2018",
-          "room": "Hostel Mixed Dorm Room",
-          "arrival": "23 May 2018",
-          "departure": "21 Jun 2018",
-          "night": 27,
-          "people": 1,
-          "email": "sean.chen@gmail.com",
-          "phone": "+14449991234",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.1 / CA"
+            "id": "5",
+            "name": "Sean Chen",
+            "update": "21 May 2018",
+            "room": "Hostel Mixed Dorm Room",
+            "arrival": "23 May 2018",
+            "departure": "21 Jun 2018",
+            "night": 27,
+            "people": 1,
+            "email": "sean.chen@gmail.com",
+            "phone": "+14449991234",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.1 / CA"
         },
         {
-          "id": "6",
-          "name": "Aja Huang",
-          "update": "6 Aug 2020",
-          "room": "Tralapa Casita by the Sea",
-          "arrival": "14 Aug 2020",
-          "departure": "21 Aug 2020",
-          "night": 6,
-          "people": 10,
-          "email": "aja.huang@gmail.com",
-          "phone": "+14449994321",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.33 / CA"
+            "id": "6",
+            "name": "Aja Huang",
+            "update": "6 Aug 2020",
+            "room": "Tralapa Casita by the Sea",
+            "arrival": "14 Aug 2020",
+            "departure": "21 Aug 2020",
+            "night": 6,
+            "people": 10,
+            "email": "aja.huang@gmail.com",
+            "phone": "+14449994321",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.33 / CA"
         },
         {
-          "id": "7",
-          "name": "Richard Branson",
-          "update": "19 Oct 2019",
-          "room": "King Studio Apartment",
-          "arrival": "26 Oct 2019",
-          "departure": "30 Oct 2019",
-          "night": 3,
-          "people": 2,
-          "email": "richard.ranson@gmail.com",
-          "phone": "+14449991234",
-          "location": "CA",
-          "language": "English",
-          "tcpip": "192.168.0.1 / CA"
+            "id": "7",
+            "name": "Steve Chen",
+            "update": "19 Oct 2019",
+            "room": "King Studio Apartment",
+            "arrival": "26 Oct 2019",
+            "departure": "30 Oct 2019",
+            "night": 3,
+            "people": 2,
+            "email": "Steve.Chen@gmail.com",
+            "phone": "+14449991234",
+            "location": "CA",
+            "language": "English",
+            "tcpip": "192.168.0.1 / CA"
         }
-      ]);
+    ]);
 
     const [id, setId] = useState();
 
@@ -150,7 +150,7 @@ const ReservationBody = () => {
     //         .then((response) => response.json())
     //         .then((result) => setBookings(result));
     // }, []);
-    
+
 
     // get data from a local json-server
     // useEffect(() => {
@@ -159,7 +159,7 @@ const ReservationBody = () => {
     //     .then((res) => { setBookings(res.data) });
     // }, []);
 
-    const selectedBooking = bookings.find(selectedBooking => selectedBooking.id === id);
+    const selectedBooking = bookings.find(booking => booking.id === id);
 
     const bookingDetail = () => {
         if (selectedBooking === undefined) {
@@ -227,6 +227,14 @@ const ReservationBody = () => {
         }
     };
 
+    const [originalBookings, setOriginalBookings] = useState(null)
+
+    const handleSearch = (value) => {
+        setOriginalBookings(bookings);
+        let searchResult = bookings.filter(booking => booking.name.toLowerCase().includes(value.toLowerCase()));
+        setBookings(searchResult);
+    }
+
     return (
         <BookingBodyWarp>
             <NavSideBar>
@@ -237,6 +245,7 @@ const ReservationBody = () => {
                         name='keyWord'
                         placeholder='Search'
                         size='30'
+                        onChange={(e) => handleSearch(e.target.value)}
                     />
                     <BiSearch style={{ color: '#666', marginLeft: '10px' }} />
                 </NavTopBlock>
