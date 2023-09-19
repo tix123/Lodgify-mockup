@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lodgify-mockup/static/css/main.073c9b0a.css",
-    "main.js": "/lodgify-mockup/static/js/main.49520d06.js",
+    "main.js": "/lodgify-mockup/static/js/main.cb806c96.js",
     "static/js/787.612659ff.chunk.js": "/lodgify-mockup/static/js/787.612659ff.chunk.js",
     "index.html": "/lodgify-mockup/index.html",
     "main.073c9b0a.css.map": "/lodgify-mockup/static/css/main.073c9b0a.css.map",
-    "main.49520d06.js.map": "/lodgify-mockup/static/js/main.49520d06.js.map",
+    "main.cb806c96.js.map": "/lodgify-mockup/static/js/main.cb806c96.js.map",
     "787.612659ff.chunk.js.map": "/lodgify-mockup/static/js/787.612659ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.49520d06.js"
+    "static/js/main.cb806c96.js"
   ]
 }
