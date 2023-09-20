@@ -13,10 +13,13 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 const InputForm = (props) => {
 
-    const [name, setName] = useState("")
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [room, setRoom] = useState("King Bed Room")
@@ -28,46 +31,61 @@ const InputForm = (props) => {
     console.log("today", today.toString())
     console.log("arrival", arrival)
 
+    const handleClear = () => {
+        setFirstName("")
+        setLastName("")
+        setEmail("")
+        setPhone("")
+        setRoom("King Bed Room")
+        setGuest(1)
+        setArrival(null)
+        setDeparture(null)
+    }
 
     return (
         <Dialog
             open={props.formOpen}
             onClose={props.handleFormClose}
         >
-            <DialogTitle>Create a Booking</DialogTitle>
+            <DialogTitle>
+                <b>Create a Booking</b>
+            </DialogTitle>
             <DialogContent >
-                <Grid container spacing={2} direction="column" pt={1}>
-                    <Grid item>
+                <Stack spacing={2} >
+                    <Stack direction="row" spacing={2} >
                         <TextField
                             fullWidth
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            // size="small"
-                            label="Name"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            label="First Name"
                             variant="outlined"
                         />
-                    </Grid>
-                    <Grid item>
+                        <TextField
+                            fullWidth
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            label="Last Name"
+                            variant="outlined"
+                        />
+                    </Stack>
+                    <Stack direction="row" spacing={2} >
                         <TextField
                             fullWidth
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            // size="small"
                             label="Email"
                             variant="outlined"
                         />
-                    </Grid>
-                    <Grid item>
+
                         <TextField
                             fullWidth
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
-                            // size="small"
                             label="Phone"
                             variant="outlined"
                         />
-                    </Grid>
-                    <Grid item>
+                    </Stack>
+                    <Stack direction="row" spacing={2} >
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">Room Type</InputLabel>
                             <Select
@@ -75,15 +93,13 @@ const InputForm = (props) => {
                                 id="demo-simple-select"
                                 value={room}
                                 label="Room Type"
-                                // size="small"
                                 onChange={(e) => setRoom(e.target.value)}
                             >
                                 <MenuItem value="King Bed Room">King Bed Room</MenuItem>
                                 <MenuItem value="Queen Bed Room">Queen Bed Room</MenuItem>
                             </Select>
                         </FormControl>
-                    </Grid>
-                    <Grid item>
+
                         <FormControl fullWidth>
                             <InputLabel id="demo-simple-select-label">Guests</InputLabel>
                             <Select
@@ -99,32 +115,48 @@ const InputForm = (props) => {
                                 <MenuItem value={4}>4</MenuItem>
                             </Select>
                         </FormControl>
-                    </Grid>
-                    <Grid item>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={['DatePicker']}>
-                                <DatePicker
-                                    label="Arrival Date"
-                                    value={arrival}
-                                    onChange={(value) => setArrival(value.format("DD MMM YYYY"))}
-                                />
-                            </DemoContainer>
-                        </LocalizationProvider>
-                    </Grid>
-                    <Grid item>
-                        <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DemoContainer components={['DatePicker']}>
-                                <DatePicker
-                                    label="Departure Date"
-                                    value={departure}
-                                    onChange={(value) => setDeparture(value.format("DD MMM YYYY"))}
-                                />
-                            </DemoContainer>
-                        </LocalizationProvider>
-                    </Grid>
-                </Grid>
+                    </Stack>
+                </Stack>
+                <Stack direction="row" spacing={2} pt={1}>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DemoContainer components={['DatePicker']}>
+                            <DatePicker
+                                label="Arrival Date"
+                                value={arrival}
+                                onChange={(value) => setArrival(value)}
+                            />
+                        </DemoContainer>
+                    </LocalizationProvider>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <DemoContainer components={['DatePicker']}>
+                            <DatePicker
+                                label="Departure Date"
+                                value={departure}
+                                onChange={(value) => setDeparture(value)}
+                            />
+                        </DemoContainer>
+                    </LocalizationProvider>
+                </Stack>
+
             </DialogContent>
             <DialogActions>
+                <Grid
+                    container
+                    style={{ width: "100%" }}
+                    justifyContent="end"
+                    alignItems="center"
+                    spacing={2}
+                    pr={2}
+                    pb={2}
+                >
+                    <Grid item xs={3}>
+                        <Button fullWidth variant="contained" onClick={handleClear}>Clear</Button>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Button fullWidth variant="contained" onClick={handleClear}>Create</Button>
+                    </Grid>
+
+                </Grid>
 
             </DialogActions>
         </Dialog>

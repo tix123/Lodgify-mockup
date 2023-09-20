@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BiUser, BiMoon, BiSearch } from 'react-icons/bi';
 // import axios from 'axios';
+import Button from '@mui/material/Button';
 import {
     BookingCheckBoxLabel,
     GuestName,
@@ -17,7 +18,7 @@ import {
     ButtonWarp,
     NavBottomBlock,
     NavSideBar,
-    SideButton,
+    // SideButton,
     NavTopBlock,
     SearchInput,
     BookingCheckBox,
@@ -121,7 +122,7 @@ const ReservationBody = () => {
             "arrival": "14 Aug 2020",
             "departure": "21 Aug 2020",
             "night": 6,
-            "people": 10,
+            "people": 4,
             "email": "aja.huang@gmail.com",
             "phone": "+14449994321",
             "location": "CA",
@@ -200,7 +201,7 @@ const ReservationBody = () => {
                         <IdNumberAndDate>#{selectedBooking.id} created on {selectedBooking.update}</IdNumberAndDate>
                         <br />
                         <RoomTypeAndGuests>{selectedBooking.room} — {selectedBooking.people} adults</RoomTypeAndGuests>
-                        <b>{selectedBooking.arrival}</b> 🡢 <b>{selectedBooking.departure}</b>({selectedBooking.night} nights)
+                        <b>{selectedBooking.arrival}</b> 🡢 <b>{selectedBooking.departure}</b> ({selectedBooking.night} nights)
                         <br />
                         <br />
                         <HrBar />
@@ -302,7 +303,8 @@ const ReservationBody = () => {
                     ))}
                 </BookingCardContainer>
                 <NavBottomBlock>
-                    <SideButton onClick={handleFormOpen}>Create Booking</SideButton>
+                    {/* <SideButton onClick={handleFormOpen}>Create Booking</SideButton> */}
+                    <Button sx={{width: "70%"}} variant="contained" onClick={handleFormOpen}>Create Booking</Button>
                 </NavBottomBlock>
             </NavSideBar>
 
