@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+// import { Link } from 'react-scroll';
 
 const navBarBG = "#e9eae4";
 const border = "#ccc"
@@ -79,7 +79,7 @@ padding: 5px 5px;
 border: none;
 `;
 
-export const SideButton = styled(Link)`
+export const SideButton = styled.button`
 width: 200px;  
 border-radius: 5px;
 background: ${sideButtonBG};
@@ -100,7 +100,7 @@ transition: all 0.2s ease-in-out;
   }
 `;
 
-export const ContentButton = styled(Link)`
+export const ContentButton = styled.button`
 width: 250px;  
 border-radius: 5px;
 background: ${contentButtonBG};

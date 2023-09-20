@@ -32,6 +32,7 @@ import {
     BookinglItemLabel,
     BookinglItemValue
 } from './ReservationBodyElements';
+import InputForm from '../InputForm';
 
 const ReservationBody = () => {
     const [bookings, setBookings] = useState([])
@@ -41,7 +42,7 @@ const ReservationBody = () => {
             "id": "1",
             "name": "Morris Chang",
             "update": "10 Jan 2021",
-            "room": "King Studio Apartment",
+            "room": "King Bed Room",
             "arrival": "18 Jan 2021",
             "departure": "22 Jan 2021",
             "night": 3,
@@ -56,7 +57,7 @@ const ReservationBody = () => {
             "id": "2",
             "name": "Lisa Su",
             "update": "10 Dec 2020",
-            "room": "King Studio Apartment",
+            "room": "Queen Bed Room",
             "arrival": "15 Dec 2020",
             "departure": "21 Dec 2020",
             "night": 5,
@@ -71,7 +72,7 @@ const ReservationBody = () => {
             "id": "3",
             "name": "Jensen Huang",
             "update": "2 Feb 2021",
-            "room": "Queen Apartments",
+            "room": "King Bed Room",
             "arrival": "5 Feb 2021",
             "departure": "6 Feb 2021",
             "night": 1,
@@ -86,7 +87,7 @@ const ReservationBody = () => {
             "id": "4",
             "name": "Jerry Yang",
             "update": "15 Mar 2019",
-            "room": "Queen Apartments",
+            "room": "Queen Bed Room",
             "arrival": "3 Apr 2020",
             "departure": "12 Apr 2020",
             "night": 8,
@@ -101,7 +102,7 @@ const ReservationBody = () => {
             "id": "5",
             "name": "Sean Chen",
             "update": "21 May 2018",
-            "room": "Hostel Mixed Dorm Room",
+            "room": "King Bed Room",
             "arrival": "23 May 2018",
             "departure": "21 Jun 2018",
             "night": 27,
@@ -116,7 +117,7 @@ const ReservationBody = () => {
             "id": "6",
             "name": "Aja Huang",
             "update": "6 Aug 2020",
-            "room": "Tralapa Casita by the Sea",
+            "room": "Queen Bed Room",
             "arrival": "14 Aug 2020",
             "departure": "21 Aug 2020",
             "night": 6,
@@ -131,7 +132,7 @@ const ReservationBody = () => {
             "id": "7",
             "name": "Steve Chen",
             "update": "19 Oct 2019",
-            "room": "King Studio Apartment",
+            "room": "King Bed Room",
             "arrival": "26 Oct 2019",
             "departure": "30 Oct 2019",
             "night": 3,
@@ -145,6 +146,17 @@ const ReservationBody = () => {
     ]);
 
     const [id, setId] = useState();
+
+    const [formOpen, setFormOpen] = useState(false)
+
+    const handleFormOpen = () => {
+        setFormOpen(true)
+    }
+
+    const handleFormClose = () => {
+        setFormOpen(false)
+    }
+
 
     useEffect(() => {
         setBookings(originalBookings)
@@ -174,8 +186,8 @@ const ReservationBody = () => {
                     <EmptyContentTitle>Reservations</EmptyContentTitle>
                     <EmptyContentSubtitle>Select any reservation item</EmptyContentSubtitle>
                     <ButtonWarp>
-                        <ContentButton to="top">Create Booking</ContentButton>
-                        <ContentButton to="top">Create Booking with Quote</ContentButton>
+                        <ContentButton onClick={handleFormOpen}>Create Booking</ContentButton>
+                        <ContentButton onClick={handleFormOpen}>Create Booking with Quote</ContentButton>
                     </ButtonWarp>
                 </Nonselected >
             );
@@ -245,6 +257,7 @@ const ReservationBody = () => {
     }
 
     return (
+
         <BookingBodyWarp>
             <NavSideBar>
                 <NavTopBlock>
@@ -252,7 +265,7 @@ const ReservationBody = () => {
                         type='text'
                         id='keyWord'
                         name='keyWord'
-                        placeholder='Search'
+                        placeholder='Search by name'
                         size='30'
                         onChange={(e) => handleSearch(e.target.value)}
                     />
@@ -289,13 +302,19 @@ const ReservationBody = () => {
                     ))}
                 </BookingCardContainer>
                 <NavBottomBlock>
-                    <SideButton to="top">Create Booking</SideButton>
+                    <SideButton onClick={handleFormOpen}>Create Booking</SideButton>
                 </NavBottomBlock>
             </NavSideBar>
 
             {bookingDetail()}
 
+            <InputForm
+                formOpen={formOpen}
+                handleFormClose={handleFormClose}
+            />
+
         </BookingBodyWarp>
+
     );
 };
 
