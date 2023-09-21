@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BiUser, BiMoon, BiSearch } from 'react-icons/bi';
 // import axios from 'axios';
 import Button from '@mui/material/Button';
+
 import {
     BookingCheckBoxLabel,
     GuestName,
@@ -313,6 +314,8 @@ const ReservationBody = () => {
             <InputForm
                 formOpen={formOpen}
                 handleFormClose={handleFormClose}
+                originalBookings={originalBookings}
+                setOriginalBookings={setOriginalBookings}
             />
 
         </BookingBodyWarp>
