@@ -93,8 +93,8 @@ const InputForm = (props) => {
         setPhone("")
         setRoom("King Bed Room")
         setGuest(1)
-        setArrival(null)
-        setDeparture(null)
+        setArrival(() => dayjs())
+        setDeparture(() => dayjs().add(1, "day"))
     }
 
     const handleCreate = () => {
